@@ -1,0 +1,9 @@
+# Assume each person has only one gc:givenName property.  So if we
+# have two people with different givenName values, they must be
+#  different people.
+
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix gc: <http://www.daml.org/2001/01/gedcom/gedcom#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+
+{?P1 gc:givenName ?N1 . ?P2 gc:givenName ?N2 . ?N1 string:notEqualIgnoringCase ?N2} => {?P1 owl:differentFrom ?P2} .

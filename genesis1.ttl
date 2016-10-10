@@ -33,10 +33,3 @@
 :Cain owl:differentFrom :Able, :Adam, :Eve.
 :Adam owl:differentFrom :Able, :Cain, :Eve.
 :Eve owl:differentFrom :Able, :Cain, :Adam.
-
-
-
-
-
-
-

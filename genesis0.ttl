@@ -27,16 +27,10 @@
   gc:givenName "Eve";
   gc:spouseIn :fam1 .
 
-# [ ] a owl:AllDifferent; owl:distinctMembers (:Able :Cain :Adam :Eve) .
+# we have no n3 rules to handle this
+[ ] a owl:AllDifferent; owl:distinctMembers (:Able :Cain :Adam :Eve) .
 
-:Able owl:differentFrom :Cain, :Adam, :Eve.
-:Cain owl:differentFrom :Able, :Adam, :Eve.
-:Adam owl:differentFrom :Able, :Cain, :Eve.
-:Eve owl:differentFrom :Able, :Cain, :Adam.
-
-
-
-
-
-
-
+# :Able owl:differentFrom :Cain, :Adam, :Eve.
+# :Cain owl:differentFrom :Able, :Adam, :Eve.
+# :Adam owl:differentFrom :Able, :Cain, :Eve.
+# :Eve owl:differentFrom :Able, :Cain, :Adam.
