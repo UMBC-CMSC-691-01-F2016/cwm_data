@@ -1,0 +1,209 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix daml: <http://www.daml.org/2001/03/daml+oil#> .
+@prefix g: <http://www.daml.org/2001/01/gedcom/gedcom#> .
+
+<unknown:namespace> a daml:Ontology ;
+	daml:versionInfo "$Id: gedcom.daml,v 1.15 2002/09/06 15:38:18 mdean Exp $" ;
+	rdfs:comment "Genealogical Data Communication (GEDCOM) represented in DAML+OIL" ;
+	daml:imports <http://www.daml.org/2001/03/daml+oil> .
+
+<unknown:namespace#Individual> a rdfs:Class ;
+	rdfs:comment "An individual named in a GEDCOM file." ;
+	daml:equivalentTo <http://www.daml.org/2001/03/daml+oil-ex#Person> ;
+	rdfs:subClassOf _:node1aum3sg65x1 .
+
+_:node1aum3sg65x1 a daml:Restriction ;
+	daml:onProperty <unknown:namespace#givenName> ;
+	daml:toClass <http://www.w3.org/2000/10/XMLSchema#string> .
+
+<unknown:namespace#Individual> rdfs:subClassOf _:node1aum3sg65x2 .
+
+_:node1aum3sg65x2 a daml:Restriction ;
+	daml:onProperty <unknown:namespace#givenName> ;
+	daml:maxCardinality "1" .
+
+<unknown:namespace#Individual> rdfs:subClassOf _:node1aum3sg65x3 .
+
+_:node1aum3sg65x3 a daml:Restriction ;
+	daml:onProperty <unknown:namespace#surname> ;
+	daml:toClass <http://www.w3.org/2000/10/XMLSchema#string> .
+
+<unknown:namespace#Individual> rdfs:subClassOf _:node1aum3sg65x4 .
+
+_:node1aum3sg65x4 a daml:Restriction ;
+	daml:onProperty <unknown:namespace#surname> ;
+	daml:maxCardinality "1" .
+
+<unknown:namespace#Individual> rdfs:subClassOf _:node1aum3sg65x5 .
+
+_:node1aum3sg65x5 a daml:Restriction ;
+	daml:onProperty <unknown:namespace#name> ;
+	daml:toClass <http://www.w3.org/2000/10/XMLSchema#string> .
+
+<unknown:namespace#Individual> rdfs:subClassOf _:node1aum3sg65x6 .
+
+_:node1aum3sg65x6 a daml:Restriction ;
+	daml:onProperty <unknown:namespace#name> ;
+	daml:maxCardinality "1" .
+
+<unknown:namespace#Individual> rdfs:subClassOf _:node1aum3sg65x7 .
+
+_:node1aum3sg65x7 a daml:Restriction ;
+	daml:onProperty <unknown:namespace#sex> ;
+	daml:toClass <http://www.w3.org/2000/10/XMLSchema#string> .
+
+<unknown:namespace#Individual> rdfs:subClassOf _:node1aum3sg65x8 .
+
+_:node1aum3sg65x8 a daml:Restriction ;
+	daml:onProperty <unknown:namespace#sex> ;
+	daml:maxCardinality "1" .
+
+<unknown:namespace#Individual> rdfs:subClassOf _:node1aum3sg65x9 .
+
+_:node1aum3sg65x9 a daml:Restriction ;
+	daml:onProperty <unknown:namespace#title> ;
+	daml:toClass <http://www.w3.org/2000/10/XMLSchema#string> .
+
+<unknown:namespace#Individual> rdfs:subClassOf _:node1aum3sg65x10 .
+
+_:node1aum3sg65x10 a daml:Restriction ;
+	daml:onProperty <unknown:namespace#title> ;
+	daml:maxCardinality "1" .
+
+<unknown:namespace#Individual> rdfs:subClassOf _:node1aum3sg65x11 .
+
+_:node1aum3sg65x11 a daml:Restriction ;
+	daml:onProperty <unknown:namespace#spouseIn> ;
+	daml:toClass <unknown:namespace#Family> .
+
+<unknown:namespace#Individual> rdfs:subClassOf _:node1aum3sg65x12 .
+
+_:node1aum3sg65x12 a daml:Restriction ;
+	daml:onProperty <unknown:namespace#childIn> ;
+	daml:toClass <unknown:namespace#Family> .
+
+<unknown:namespace#Individual> rdfs:subClassOf _:node1aum3sg65x13 .
+
+_:node1aum3sg65x13 a daml:Restriction ;
+	daml:onProperty <unknown:namespace#childIn> ;
+	daml:maxCardinality "1" .
+
+<unknown:namespace#Individual> rdfs:subClassOf _:node1aum3sg65x14 .
+
+_:node1aum3sg65x14 a daml:Restriction ;
+	daml:onProperty <unknown:namespace#birth> ;
+	daml:toClass <unknown:namespace#Birth> .
+
+<unknown:namespace#Individual> rdfs:subClassOf _:node1aum3sg65x15 .
+
+_:node1aum3sg65x15 a daml:Restriction ;
+	daml:onProperty <unknown:namespace#birth> ;
+	daml:maxCardinality "1" .
+
+<unknown:namespace#Individual> rdfs:subClassOf _:node1aum3sg65x16 .
+
+_:node1aum3sg65x16 a daml:Restriction ;
+	daml:onProperty <unknown:namespace#death> ;
+	daml:toClass <unknown:namespace#Death> .
+
+<unknown:namespace#Individual> rdfs:subClassOf _:node1aum3sg65x17 .
+
+_:node1aum3sg65x17 a daml:Restriction ;
+	daml:onProperty <unknown:namespace#death> ;
+	daml:maxCardinality "1" .
+
+<unknown:namespace#Family> a rdfs:Class ;
+	rdfs:comment "A family named in a GEDCOM file." ;
+	rdfs:subClassOf _:node1aum3sg65x18 .
+
+_:node1aum3sg65x18 a daml:Restriction ;
+	daml:onProperty <unknown:namespace#marriage> ;
+	daml:toClass <unknown:namespace#Marriage> .
+
+<unknown:namespace#Family> rdfs:subClassOf _:node1aum3sg65x19 .
+
+_:node1aum3sg65x19 a daml:Restriction ;
+	daml:onProperty <unknown:namespace#divorce> ;
+	daml:toClass <unknown:namespace#Divorce> .
+
+<unknown:namespace#Event> a rdfs:Class ;
+	rdfs:subClassOf _:node1aum3sg65x20 .
+
+_:node1aum3sg65x20 a daml:Restriction ;
+	daml:onProperty <unknown:namespace#date> ;
+	daml:toClass <http://www.w3.org/2000/10/XMLSchema#string> .
+
+<unknown:namespace#Event> rdfs:subClassOf _:node1aum3sg65x21 .
+
+_:node1aum3sg65x21 a daml:Restriction ;
+	daml:onProperty <unknown:namespace#date> ;
+	daml:maxCardinality "1" .
+
+<unknown:namespace#Event> rdfs:subClassOf _:node1aum3sg65x22 .
+
+_:node1aum3sg65x22 a daml:Restriction ;
+	daml:onProperty <unknown:namespace#place> ;
+	daml:toClass <http://www.w3.org/2000/10/XMLSchema#string> .
+
+<unknown:namespace#Event> rdfs:subClassOf _:node1aum3sg65x23 .
+
+_:node1aum3sg65x23 a daml:Restriction ;
+	daml:onProperty <unknown:namespace#place> ;
+	daml:maxCardinality "1" .
+
+<unknown:namespace#IndividualEvent> a rdfs:Class ;
+	rdfs:subClassOf <unknown:namespace#Event> .
+
+<unknown:namespace#Birth> a rdfs:Class ;
+	rdfs:subClassOf <unknown:namespace#IndividualEvent> .
+
+<unknown:namespace#Death> a rdfs:Class ;
+	rdfs:subClassOf <unknown:namespace#IndividualEvent> .
+
+<unknown:namespace#FamilyEvent> a rdfs:Class ;
+	rdfs:subClassOf <unknown:namespace#Event> .
+
+<unknown:namespace#Marriage> a rdfs:Class ;
+	rdfs:subClassOf <unknown:namespace#FamilyEvent> .
+
+<unknown:namespace#Divorce> a rdfs:Class ;
+	rdfs:subClassOf <unknown:namespace#FamilyEvent> .
+
+<unknown:namespace#spouseIn> a daml:ObjectProperty .
+
+<unknown:namespace#childIn> a daml:ObjectProperty .
+
+<unknown:namespace#givenName> a daml:DatatypeProperty .
+
+<unknown:namespace#surname> a daml:DatatypeProperty .
+
+<unknown:namespace#name> a daml:DatatypeProperty .
+
+<unknown:namespace#sex> a daml:DatatypeProperty .
+
+<unknown:namespace#title> a daml:DatatypeProperty .
+
+<unknown:namespace#date> a daml:DatatypeProperty .
+
+<unknown:namespace#place> a daml:DatatypeProperty .
+
+<unknown:namespace#eventProperty> a daml:ObjectProperty .
+
+<unknown:namespace#individualEventProperty> a daml:ObjectProperty ;
+	rdfs:subPropertyOf <unknown:namespace#eventProperty> .
+
+<unknown:namespace#familyEventProperty> a daml:ObjectProperty ;
+	rdfs:subPropertyOf <unknown:namespace#eventProperty> .
+
+<unknown:namespace#birth> a daml:ObjectProperty ;
+	rdfs:subPropertyOf <unknown:namespace#individualEventProperty> .
+
+<unknown:namespace#death> a daml:ObjectProperty ;
+	rdfs:subPropertyOf <unknown:namespace#individualEventProperty> .
+
+<unknown:namespace#marriage> a daml:ObjectProperty ;
+	rdfs:subPropertyOf <unknown:namespace#familyEventProperty> .
+
+<unknown:namespace#divorce> a daml:ObjectProperty ;
+	rdfs:subPropertyOf <unknown:namespace#familyEventProperty> .
