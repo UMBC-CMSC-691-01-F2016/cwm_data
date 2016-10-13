@@ -1,0 +1,8 @@
+# add your custome rules to this file
+
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix gc: <http://www.daml.org/2001/01/gedcom/gedcom#>.
+
+# EXAMPLE: a mother loves her children
+# EAMPLE: { ?c gc:mother ?m } => {?m gc:loves ?c }.
